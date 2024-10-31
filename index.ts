@@ -87,6 +87,6 @@ const main = async () => {
     await writeToDisk('channels', channels)
 }
 
-await main()
+// await main()
 
-await groupMain()
+// await groupMain()

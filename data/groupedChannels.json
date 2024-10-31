@@ -1,725 +1,426 @@
 [
-  {
-    "nombre": "DAZN LaLiga",
-    "links": [
-      "acestream://1960a9be8ae9e8c755330218eac4c5805466290a"
-    ],
-    "tags": [
-      "DAZN LaLiga",
-      "DAZN Liga",
-      "DAZN LL",
-      "DAZN La Liga",
-      "DAZNLL",
-      "DAZNLaLiga"
-    ]
-  },
-  {
-    "nombre": "DAZN LaLiga 2",
-    "links": [
-      "acestream://e33e666c393ef04ebe99a9b92135d2e0b48c4d10"
-    ],
-    "tags": [
-      "DAZN LaLiga 2",
-      "DAZN Liga",
-      "DAZN LL",
-      "DAZN La Liga",
-      "DAZNLL",
-      "DAZNLaLiga 2"
-    ]
-  },
-  {
-    "nombre": "DAZN LaLiga 3",
-    "links": [
-      "acestream://8c71f0e0a5476e10950fc827f9d2a507340aba74"
-    ],
-    "tags": [
-      "DAZN LaLiga 3",
-      "DAZN Liga",
-      "DAZN LL",
-      "DAZN La Liga",
-      "DAZNLL",
-      "DAZNLaLiga 3"
-    ]
-  },
-  {
-    "nombre": "D. L.",
-    "links": [
-      "acestream://75251ba975132ec9a202806ba5bf606e87280c96",
-      "acestream://95b2238dec35cf00dfdf8fba18e9920bc2c56256",
-      "acestream://a3bca895c58d3fc7d5e4259d3d5e3cf0291d1914"
-    ],
-    "tags": [
-      "D. L.",
-      "D.L.Opción 2",
-      "D.L.Opción 3",
-      "D.L.Opción 4"
-    ]
-  },
-  {
-    "nombre": "D. L. 2.",
-    "links": [
-      "acestream://0950c37fe1ea817fc561c611ae943d58505f7a79",
-      "acestream://93d663e92a93845b11c9831885646fa39ba1ed66"
-    ],
-    "tags": [
-      "D. L. 2.",
-      "D.L.2.Opción 2",
-      "D.L.2.Opción 3"
-    ]
-  },
-  {
-    "nombre": "DAZN 1",
-    "links": [
-      "acestream://8ca07071b39185431f8e940ec98d1add9e561639"
-    ],
-    "tags": [
-      "DAZN 1",
-      "DAZN1"
-    ]
-  },
-  {
-    "nombre": "",
-    "links": [
-      "acestream://eaff9293c76a324c750ef5094c2a4e2c96518d1f",
-      "acestream://7aa402bab9fff43258fbcf401881a39475f30aaf",
-      "acestream://9dad717d99b29a05672166258a77c25b57713dd5",
-      "acestream://e1fcad9de0c782c157fde6377805c58297ab65c2",
-      "acestream://512aeadf50d91603d15b32f1e408166536ec4ac9",
-      "acestream://aa82e7d4f03061f2144a2f4be22f2e2210d42280",
-      "acestream://7d8c87e057be98f00f22e23b23fbf08999e4b02f",
-      "acestream://f031f5728b32f6089dda28edebe990cf198108d8",
-      "acestream://06b367c22394a1358c9cefa0cb5d0b64b9b2b3f4",
-      "acestream://2709d0ab86cb6ce7ba4d3ad188d7fa80668f2924",
-      "acestream://1d79a7543d691666135669f89f3541f54e2dd0a9",
-      "acestream://6753492c1908274c268a1b28e2a054a0ff8f86f9",
-      "acestream://d59fe9978eed49f256b312a60671b5bce43d3f24",
-      "acestream://931b1984badcb821df7b47a66ac0835ac871b51c",
-      "acestream://e2e2aca792aae5da19995ac516b1d620531bd49c",
-      "acestream://6b56c1de436327b49e429a702e81e9269630e37a",
-      "acestream://872608e734992db636eb79426802cd08f4029afb",
-      "acestream://858b3cf2842ebe394999275e5ebb0435f1af2ae4",
-      "https://miztv.shop/tele/stream-749.php",
-      "https://elplan94.github.io/hook/",
-      "https://www.socialcreator.com/elplandeportes"
-    ],
-    "tags": [
-      "",
-      "Opción 2",
-      "Opción 2",
-      "Opción 2",
-      "Opción 3",
-      "Opción 2",
-      "Opción 2",
-      "Opción 3",
-      "Opción 4",
-      "Opción 2",
-      "Opción 2",
-      "Opción 2",
-      "Opción 2",
-      "Opción 2",
-      "Opción 3",
-      "Opción 4",
-      "Opción 5",
-      "Opción 2",
-      "Opción 3",
-      "Opción 2",
-      "Opción 1",
-      "Opción 2"
-    ]
-  },
-  {
-    "nombre": "DAZN 2",
-    "links": [
-      "acestream://60dbeeb299ec04bf02bc7426d827547599d3d9fc"
-    ],
-    "tags": [
-      "DAZN 2",
-      "DAZN2"
-    ]
-  },
-  {
-    "nombre": "DAZN 3",
-    "links": [
-      "acestream://a8ffddef56f082d4bb5c0be0d3d2fdd8c16dbd97"
-    ],
-    "tags": [
-      "DAZN 3",
-      "DAZN3"
-    ]
-  },
-  {
-    "nombre": "DAZN 4",
-    "links": [
-      "acestream://2fcdf7a19c0858f686efdfabd3c8c2b92bf6bcfd"
-    ],
-    "tags": [
-      "DAZN 4",
-      "DAZN4"
-    ]
-  },
-  {
-    "nombre": "DAZN F1",
-    "links": [
-      "acestream://5789ca155323664edd293b848606688edf803f4d"
-    ],
-    "tags": [
-      "DAZN F1",
-      "DAZNF1"
-    ]
-  },
-  {
-    "nombre": "FEF TV 1",
-    "links": [
-      "acestream://c1ee6e1e0ef5928d8261f855c417de21794f437d"
-    ],
-    "tags": [
-      "FEF TV 1"
-    ]
-  },
-  {
-    "nombre": "FEF TV 2",
-    "links": [
-      "acestream://8677d339ecddd75165c0015025f598b6215974cf"
-    ],
-    "tags": [
-      "FEF TV 2"
-    ]
-  },
-  {
-    "nombre": "F1 TV",
-    "links": [
-      "acestream://8c92cfef8dd37e2dd2d3b8985b81cc7708e24d3c"
-    ],
-    "tags": [
-      "F1 TV"
-    ]
-  },
-  {
-    "nombre": "LaLiga TV Bar",
-    "links": [
-      "acestream://aa82e7d4f03061f2144a2f4be22f2e2210d42280"
-    ],
-    "tags": [
-      "LaLiga TV Bar"
-    ]
-  },
-  {
-    "nombre": "M. LaLiga TV",
-    "links": [
-      "acestream://1969c27658d4c8333ab2c0670802546121a774a5"
-    ],
-    "tags": [
-      "M. LaLiga TV",
-      "Movistar  LaLiga TV",
-      "M+  LaLiga TV"
-    ]
-  },
-  {
-    "nombre": "M. LaLiga TV 2",
-    "links": [
-      "acestream://26029f72a4ca831d09deefe89534818db1d105bc"
-    ],
-    "tags": [
-      "M. LaLiga TV 2",
-      "Movistar  LaLiga TV 2",
-      "M+  LaLiga TV 2"
-    ]
-  },
-  {
-    "nombre": "M. L. 2.",
-    "links": [
-      "acestream://80126b240f3e4e004754fd8f8103e857ab2556a0"
-    ],
-    "tags": [
-      "M. L. 2.",
-      "Movistar  L. 2.",
-      "M+  L. 2.",
-      "M.L.2.Opción 2"
-    ]
-  },
-  {
-    "nombre": "LaLiga Hyper TV",
-    "links": [
-      "acestream://4c46585214b23b1d802ef2168060c7649a3894cf"
-    ],
-    "tags": [
-      "LaLiga Hyper TV"
-    ]
-  },
-  {
-    "nombre": "LaLiga Hyper 2",
-    "links": [
-      "acestream://d81b4f2f3fde433539c097b2edc9b587ca47b087"
-    ],
-    "tags": [
-      "LaLiga Hyper 2"
-    ]
-  },
-  {
-    "nombre": "M. #Vamos",
-    "links": [
-      "acestream://859bb6295b8d0f224224d3063d9db7cdeca03122"
-    ],
-    "tags": [
-      "M. #Vamos",
-      "Movistar  #Vamos",
-      "M+  #Vamos"
-    ]
-  },
-  {
-    "nombre": "M. Ellas",
-    "links": [
-      "acestream://71e9e4c66a271ff58beb76792e01eeb6a1dde746"
-    ],
-    "tags": [
-      "M. Ellas",
-      "Movistar  Ellas",
-      "M+  Ellas"
-    ]
-  },
-  {
-    "nombre": "Movistar Plus",
-    "links": [
-      "acestream://5a236fbbe6e5bbfec03db548c244a7c858d675c0"
-    ],
-    "tags": [
-      "Movistar Plus",
-      "M+ Plus"
-    ]
-  },
-  {
-    "nombre": "M. #Vamos 2",
-    "links": [
-      "acestream://3bba7c95857c2502c7e03ced1a6a9b00eb567fa0"
-    ],
-    "tags": [
-      "M. #Vamos 2",
-      "Movistar  #Vamos 2",
-      "M+  #Vamos 2"
-    ]
-  },
-  {
-    "nombre": "Movistar Plus 2",
-    "links": [
-      "acestream://8ba764f6a3bce6eae87ec71208fad1aa3a20528d"
-    ],
-    "tags": [
-      "Movistar Plus 2",
-      "M+ Plus 2"
-    ]
-  },
-  {
-    "nombre": "M. Deportes",
-    "links": [
-      "acestream://acb510858f34c3c6fd5f79395b031abd6885c2b3"
-    ],
-    "tags": [
-      "M. Deportes",
-      "Movistar  Deportes",
-      "M+  Deportes"
-    ]
-  },
-  {
-    "nombre": "M. Deportes 2",
-    "links": [
-      "acestream://e6f06d697f66a8fa606c4d61236c24b0d604d917"
-    ],
-    "tags": [
-      "M. Deportes 2",
-      "Movistar  Deportes 2",
-      "M+  Deportes 2"
-    ]
-  },
-  {
-    "nombre": "M. Deportes 3",
-    "links": [
-      "acestream://aee0a595220e0f1c2fee725fd1dbc602d7152a9a"
-    ],
-    "tags": [
-      "M. Deportes 3",
-      "Movistar  Deportes 3",
-      "M+  Deportes 3"
-    ]
-  },
-  {
-    "nombre": "M. Deportes 4",
-    "links": [
-      "acestream://42e83c337ece0af9ca7808859f84c7960e9cb6f5"
-    ],
-    "tags": [
-      "M. Deportes 4",
-      "Movistar  Deportes 4",
-      "M+  Deportes 4"
-    ]
-  },
-  {
-    "nombre": "M. Deportes 5",
-    "links": [
-      "acestream://b1e5abc48195b7ca9b2ee1b352e790eb9f7292e3"
-    ],
-    "tags": [
-      "M. Deportes 5",
-      "Movistar  Deportes 5",
-      "M+  Deportes 5"
-    ]
-  },
-  {
-    "nombre": "M. Deportes 6",
-    "links": [
-      "acestream://8587ed8ac36ac477e1d4176d3159a38bd154d4ce"
-    ],
-    "tags": [
-      "M. Deportes 6",
-      "Movistar  Deportes 6",
-      "M+  Deportes 6"
-    ]
-  },
-  {
-    "nombre": "M. Deportes 7",
-    "links": [
-      "acestream://2448f1d084f440eed2fbe847e24f1c02f5659a78"
-    ],
-    "tags": [
-      "M. Deportes 7",
-      "Movistar  Deportes 7",
-      "M+  Deportes 7"
-    ]
-  },
-  {
-    "nombre": "M. D.",
-    "links": [
-      "acestream://e5fa927d9a017f4523fdb62774a0aec457985bfa"
-    ],
-    "tags": [
-      "M. D.",
-      "Movistar  D.",
-      "M+  D.",
-      "M.D.Opción 2"
-    ]
-  },
-  {
-    "nombre": "M. Liga de Campeones",
-    "links": [
-      "acestream://f096a64dd756a6d549aa7b12ee9acf7eee27e833"
-    ],
-    "tags": [
-      "M. Liga de Campeones",
-      "Movistar  Liga de Campeones",
-      "M+  Liga de Campeones"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 2",
-    "links": [
-      "acestream://fc2fe31b0bce25e2dc7ab4d262bf645e2be5a393"
-    ],
-    "tags": [
-      "M. L. Camp. 2",
-      "Movistar  L. Camp. 2",
-      "M+  L. Camp. 2"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 3",
-    "links": [
-      "acestream://ad372cba73aa0ece207a79532b3e30b731136bb2"
-    ],
-    "tags": [
-      "M. L. Camp. 3",
-      "Movistar  L. Camp. 3",
-      "M+  L. Camp. 3"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 4",
-    "links": [
-      "acestream://f2df4f96b23388b45e75d848a48a510cf8af560f"
-    ],
-    "tags": [
-      "M. L. Camp. 4",
-      "Movistar  L. Camp. 4",
-      "M+  L. Camp. 4"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 5",
-    "links": [
-      "acestream://67b353ab1c4c2f6396b3ca5c4b45023bd9927561"
-    ],
-    "tags": [
-      "M. L. Camp. 5",
-      "Movistar  L. Camp. 5",
-      "M+  L. Camp. 5"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 6",
-    "links": [
-      "acestream:/64a9353032efa2acb093d0bb86481f20f482d47e"
-    ],
-    "tags": [
-      "M. L. Camp. 6",
-      "Movistar  L. Camp. 6",
-      "M+  L. Camp. 6"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 7",
-    "links": [
-      "acestream://5932623d2fd7ed16b01787251b418e4f59a01cda"
-    ],
-    "tags": [
-      "M. L. Camp. 7",
-      "Movistar  L. Camp. 7",
-      "M+  L. Camp. 7"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 8",
-    "links": [
-      "acestream://6c445141445b06d7b4328d80e2dd936bd0ca52ca"
-    ],
-    "tags": [
-      "M. L. Camp. 8",
-      "Movistar  L. Camp. 8",
-      "M+  L. Camp. 8"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 9",
-    "links": [
-      "acestream://7244379f8f6382d40afec871fb8e4219a803840b"
-    ],
-    "tags": [
-      "M. L. Camp. 9",
-      "Movistar  L. Camp. 9",
-      "M+  L. Camp. 9"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 10",
-    "links": [
-      "acestream://d42e1b592b840ea34394fd3e1b1d3a4d0f399213"
-    ],
-    "tags": [
-      "M. L. Camp. 10",
-      "Movistar  L. Camp. 10",
-      "M+  L. Camp. 10"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 11",
-    "links": [
-      "acestream://e737c681a92a4328703761c6ed9d8a951655f3e4"
-    ],
-    "tags": [
-      "M. L. Camp. 11",
-      "Movistar  L. Camp. 11",
-      "M+  L. Camp. 11"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 12",
-    "links": [
-      "acestream://bb50397b3f49167eed95264005fae851baa7e3ee"
-    ],
-    "tags": [
-      "M. L. Camp. 12",
-      "Movistar  L. Camp. 12",
-      "M+  L. Camp. 12"
-    ]
-  },
-  {
-    "nombre": "M. L. Camp. 13",
-    "links": [
-      "acestream://60296c246e3596f334903fefd48cfaa724a5053b"
-    ],
-    "tags": [
-      "M. L. Camp. 13",
-      "Movistar  L. Camp. 13",
-      "M+  L. Camp. 13"
-    ]
-  },
-  {
-    "nombre": "Movistar Golf",
-    "links": [
-      "acestream://4f945b0ba4206fa2676b61e9eaa465ac3dcc8122"
-    ],
-    "tags": [
-      "Movistar Golf",
-      "M+ Golf"
-    ]
-  },
-  {
-    "nombre": "Movistar Golf 2",
-    "links": [
-      "acestream://9a4f3ae6563668b7709dac509dedc709441b3fd9"
-    ],
-    "tags": [
-      "Movistar Golf 2",
-      "M+ Golf 2"
-    ]
-  },
-  {
-    "nombre": "Tennis Channel",
-    "links": [
-      "acestream://9292d3b32432efb56db4014933cbdec0a7cf2e36"
-    ],
-    "tags": [
-      "Tennis Channel"
-    ]
-  },
-  {
-    "nombre": "Eurosport 1",
-    "links": [
-      "acestream://5e4cd48c79f991fcbee2de8b9d30c4b16de3b952"
-    ],
-    "tags": [
-      "Eurosport 1"
-    ]
-  },
-  {
-    "nombre": "Eurosport 5",
-    "links": [
-      "acestream://914ce366baec9b0fb3523dd7ba762a44b597fc40"
-    ],
-    "tags": [
-      "Eurosport 5"
-    ]
-  },
-  {
-    "nombre": "Eurosport 9",
-    "links": [
-      "acestream://dd9c56ef2f09753c59d9c2e2d2af31aeea6451c0"
-    ],
-    "tags": [
-      "Eurosport 9"
-    ]
-  },
-  {
-    "nombre": "Eurosport 2",
-    "links": [
-      "acestream://c373da9e901d414b7384e671112e64d5a2310c29"
-    ],
-    "tags": [
-      "Eurosport 2"
-    ]
-  },
-  {
-    "nombre": "Eurosport 6",
-    "links": [
-      "acestream://1bc614c5aa2a94117c13c7f0be2b8ea31b535f38"
-    ],
-    "tags": [
-      "Eurosport 6"
-    ]
-  },
-  {
-    "nombre": "Eurosport 3",
-    "links": [
-      "acestream://a62c010c71bfb76b18188f108c3cc4541c34f45e"
-    ],
-    "tags": [
-      "Eurosport 3"
-    ]
-  },
-  {
-    "nombre": "Eurosport 7",
-    "links": [
-      "acestream://e899a4f1e20f7ce1b39cc529dc237fc29a21855f"
-    ],
-    "tags": [
-      "Eurosport 7"
-    ]
-  },
-  {
-    "nombre": "Eurosport 4",
-    "links": [
-      "acestream://76a482a4cb53fc28518187c6b814f136b3db3c95"
-    ],
-    "tags": [
-      "Eurosport 4"
-    ]
-  },
-  {
-    "nombre": "Eurosport 8",
-    "links": [
-      "acestream://721a78f2076faa584c9c09059ffb4e10159f4665"
-    ],
-    "tags": [
-      "Eurosport 8"
-    ]
-  },
-  {
-    "nombre": "RTVE Play",
-    "links": [
-      "https://www.rtve.es/play/videos/directo/deportes/tdp/"
-    ],
-    "tags": [
-      "RTVE Play"
-    ]
-  },
-  {
-    "nombre": "Teledeporte TDP",
-    "links": [
-      "acestream://e2395d28ad19423212fd3aa0e81f387db3e8bb9f"
-    ],
-    "tags": [
-      "Teledeporte TDP"
-    ]
-  },
-  {
-    "nombre": "LA 1 Op. 1",
-    "links": [
-      "acestream://02b9307c5c97c86914cc5939d6bbeb5b4ec60b47"
-    ],
-    "tags": [
-      "LA 1 Op. 1"
-    ]
-  },
-  {
-    "nombre": "LA 2",
-    "links": [
-      "acestream://60106275d34f995e26bb2cc4a21a42f586c6c555"
-    ],
-    "tags": [
-      "LA 2"
-    ]
-  },
-  {
-    "nombre": "LA 1 Op. 2",
-    "links": [
-      "acestream://b897de3e62d7c6bee9ef1107d972f3d1075e03ff"
-    ],
-    "tags": [
-      "LA 1 Op. 2"
-    ]
-  },
-  {
-    "nombre": "Real Madrid Web",
-    "links": [
-      "https://www.realmadrid.com/real-madrid-tv"
-    ],
-    "tags": [
-      "Real Madrid Web"
-    ]
-  },
-  {
-    "nombre": "Real Madrid TV",
-    "links": [
-      "acestream://0ec3f3786318acd8dca2588f74c3759cda76cd11"
-    ],
-    "tags": [
-      "Real Madrid TV"
-    ]
-  },
-  {
-    "nombre": "OneToro",
-    "links": [
-      "https://tutlehd3.xyz//online.php?a=56"
-    ],
-    "tags": [
-      "OneToro"
-    ]
-  }
+    {
+        "nombre": "DAZN LaLiga",
+        "links": [
+            "acestream://1960a9be8ae9e8c755330218eac4c5805466290a",
+            "acestream://75251ba975132ec9a202806ba5bf606e87280c96",
+            "acestream://95b2238dec35cf00dfdf8fba18e9920bc2c56256",
+            "acestream://a3bca895c58d3fc7d5e4259d3d5e3cf0291d1914"
+        ],
+        "tags": [
+            "DAZN LaLiga",
+            "DAZN Liga",
+            "DAZN LL",
+            "DAZN La Liga",
+            "DAZNLL",
+            "DAZN LaLiga - Opción 2",
+            "DAZN LaLiga - Opción 3",
+            "DAZN LaLiga - Opción 4"
+        ]
+    },
+    {
+        "nombre": "DAZN LaLiga 2",
+        "links": [
+            "acestream://e33e666c393ef04ebe99a9b92135d2e0b48c4d10",
+            "acestream://0950c37fe1ea817fc561c611ae943d58505f7a79",
+            "acestream://93d663e92a93845b11c9831885646fa39ba1ed66"
+        ],
+        "tags": [
+            "DAZN LaLiga 2",
+            "DAZN Liga 2",
+            "DAZN LL2",
+            "DAZN La Liga 2",
+            "DAZNLL2",
+            "DAZN LaLiga 2 - Opción 2",
+            "DAZN LaLiga 2 - Opción 3"
+        ]
+    },
+    {
+        "nombre": "DAZN LaLiga 3",
+        "links": [
+            "acestream://8c71f0e0a5476e10950fc827f9d2a507340aba74"
+        ],
+        "tags": [
+            "DAZN LaLiga 3",
+            "DAZN Liga 3",
+            "DAZN LL3",
+            "DAZN La Liga 3",
+            "DAZNLL3"
+        ]
+    },
+    {
+        "nombre": "DAZN 1",
+        "links": [
+            "acestream://8ca07071b39185431f8e940ec98d1add9e561639",
+            "acestream://eaff9293c76a324c750ef5094c2a4e2c96518d1f"
+        ],
+        "tags": [
+            "DAZN 1",
+            "DAZN Uno",
+            "DAZN1",
+            "DAZN 1 - Opción 2"
+        ]
+    },
+    {
+        "nombre": "DAZN 2",
+        "links": [
+            "acestream://60dbeeb299ec04bf02bc7426d827547599d3d9fc",
+            "acestream://7aa402bab9fff43258fbcf401881a39475f30aaf"
+        ],
+        "tags": [
+            "DAZN 2",
+            "DAZN Dos",
+            "DAZN2",
+            "DAZN 2 - Opción 2"
+        ]
+    },
+    {
+        "nombre": "DAZN 3",
+        "links": [
+            "acestream://a8ffddef56f082d4bb5c0be0d3d2fdd8c16dbd97"
+        ],
+        "tags": [
+            "DAZN 3",
+            "DAZN Tres",
+            "DAZN3"
+        ]
+    },
+    {
+        "nombre": "DAZN 4",
+        "links": [
+            "acestream://2fcdf7a19c0858f686efdfabd3c8c2b92bf6bcfd"
+        ],
+        "tags": [
+            "DAZN 4",
+            "DAZN Cuatro",
+            "DAZN4"
+        ]
+    },
+    {
+        "nombre": "DAZN F1",
+        "links": [
+            "acestream://5789ca155323664edd293b848606688edf803f4d",
+            "acestream://9dad717d99b29a05672166258a77c25b57713dd5",
+            "acestream://e1fcad9de0c782c157fde6377805c58297ab65c2"
+        ],
+        "tags": [
+            "DAZN F1",
+            "DAZN Fórmula 1",
+            "DAZN Formula 1",
+            "DAZN F1 - Opción 2",
+            "DAZN F1 - Opción 3"
+        ]
+    },
+    {
+        "nombre": "FEF TV 1",
+        "links": [
+            "acestream://c1ee6e1e0ef5928d8261f855c417de21794f437d"
+        ],
+        "tags": [
+            "FEF TV 1",
+            "FEF TV Uno"
+        ]
+    },
+    {
+        "nombre": "FEF TV 2",
+        "links": [
+            "acestream://8677d339ecddd75165c0015025f598b6215974cf"
+        ],
+        "tags": [
+            "FEF TV 2",
+            "FEF TV Dos"
+        ]
+    },
+    {
+        "nombre": "F1 TV",
+        "links": [
+            "acestream://8c92cfef8dd37e2dd2d3b8985b81cc7708e24d3c"
+        ],
+        "tags": [
+            "F1 TV",
+            "Fórmula 1 TV",
+            "Formula 1 TV"
+        ]
+    },
+    {
+        "nombre": "LaLiga TV Bar",
+        "links": [
+            "acestream://aa82e7d4f03061f2144a2f4be22f2e2210d42280",
+            "acestream://512aeadf50d91603d15b32f1e408166536ec4ac9"
+        ],
+        "tags": [
+            "LaLiga TV Bar",
+            "La Liga TV Bar",
+            "LL TV Bar",
+            "LaLiga TV Bar - Opción 2"
+        ]
+    },
+    {
+        "nombre": "M.LaLiga TV",
+        "links": [
+            "acestream://1969c27658d4c8333ab2c0670802546121a774a5",
+            "acestream://aa82e7d4f03061f2144a2f4be22f2e2210d42280",
+            "acestream://7d8c87e057be98f00f22e23b23fbf08999e4b02f",
+            "acestream://f031f5728b32f6089dda28edebe990cf198108d8"
+        ],
+        "tags": [
+            "Movistar LaLiga TV",
+            "M+ LaLiga TV",
+            "M.LaLiga TV",
+            "M.LaLiga TV - Opción 2",
+            "M.LaLiga TV - Opción 3",
+            "M.LaLiga TV - Opción 4"
+        ]
+    },
+    {
+        "nombre": "M.LaLiga TV 2",
+        "links": [
+            "acestream://26029f72a4ca831d09deefe89534818db1d105bc",
+            "acestream://80126b240f3e4e004754fd8f8103e857ab2556a0"
+        ],
+        "tags": [
+            "Movistar LaLiga TV 2",
+            "M+ LaLiga TV 2",
+            "M.LaLiga TV 2",
+            "M.LaLiga TV 2 - Opción 2"
+        ]
+    },
+    {
+        "nombre": "LaLiga Hyper TV",
+        "links": [
+            "acestream://4c46585214b23b1d802ef2168060c7649a3894cf",
+            "acestream://06b367c22394a1358c9cefa0cb5d0b64b9b2b3f4"
+        ],
+        "tags": [
+            "LaLiga Hyper TV",
+            "La Liga Hyper TV",
+            "LL Hyper TV",
+            "LaLiga Hyper TV - Opción 2"
+        ]
+    },
+    {
+        "nombre": "LaLiga Hyper 2",
+        "links": [
+            "acestream://d81b4f2f3fde433539c097b2edc9b587ca47b087"
+        ],
+        "tags": [
+            "LaLiga Hyper 2",
+            "La Liga Hyper 2",
+            "LL Hyper 2"
+        ]
+    },
+    {
+        "nombre": "M.#Vamos",
+        "links": [
+            "acestream://859bb6295b8d0f224224d3063d9db7cdeca03122"
+        ],
+        "tags": [
+            "Movistar #Vamos",
+            "M+ #Vamos",
+            "#Vamos"
+        ]
+    },
+    {
+        "nombre": "M.#Vamos 2",
+        "links": [
+            "acestream://3bba7c95857c2502c7e03ced1a6a9b00eb567fa0"
+        ],
+        "tags": [
+            "Movistar #Vamos 2",
+            "M+ #Vamos 2",
+            "#Vamos 2"
+        ]
+    },
+    {
+        "nombre": "M.Ellas",
+        "links": [
+            "acestream://71e9e4c66a271ff58beb76792e01eeb6a1dde746"
+        ],
+        "tags": [
+            "Movistar Ellas",
+            "M+ Ellas",
+            "M.Ellas"
+        ]
+    },
+    {
+        "nombre": "Movistar Plus",
+        "links": [
+            "acestream://5a236fbbe6e5bbfec03db548c244a7c858d675c0"
+        ],
+        "tags": [
+            "Movistar+",
+            "Movistar Plus",
+            "M+",
+            "Movistar Plus+"
+        ]
+    },
+    {
+        "nombre": "Movistar Plus 2",
+        "links": [
+            "acestream://8ba764f6a3bce6eae87ec71208fad1aa3a20528d"
+        ],
+        "tags": [
+            "Movistar+ 2",
+            "Movistar Plus 2",
+            "M+ 2"
+        ]
+    },
+    {
+        "nombre": "M.Deportes",
+        "links": [
+            "acestream://acb510858f34c3c6fd5f79395b031abd6885c2b3",
+            "acestream://e5fa927d9a017f4523fdb62774a0aec457985bfa"
+        ],
+        "tags": [
+            "Movistar Deportes",
+            "M+ Deportes",
+            "M.Deportes",
+            "M.Deportes - Opción 2"
+        ]
+    },
+    {
+        "nombre": "M.Deportes 2",
+        "links": [
+            "acestream://e6f06d697f66a8fa606c4d61236c24b0d604d917"
+        ],
+        "tags": [
+            "Movistar Deportes 2",
+            "M+ Deportes 2",
+            "M.Deportes 2"
+        ]
+    },
+    {
+        "nombre": "M.Deportes 3",
+        "links": [
+            "acestream://aee0a595220e0f1c2fee725fd1dbc602d7152a9a"
+        ],
+        "tags": [
+            "Movistar Deportes 3",
+            "M+ Deportes 3",
+            "M.Deportes 3"
+        ]
+    },
+    {
+        "nombre": "M.Deportes 4",
+        "links": [
+            "acestream://42e83c337ece0af9ca7808859f84c7960e9cb6f5"
+        ],
+        "tags": [
+            "Movistar Deportes 4",
+            "M+ Deportes 4",
+            "M.Deportes 4"
+        ]
+    },
+    {
+        "nombre": "M.Deportes 5",
+        "links": [
+            "acestream://b1e5abc48195b7ca9b2ee1b352e790eb9f7292e3"
+        ],
+        "tags": [
+            "Movistar Deportes 5",
+            "M+ Deportes 5",
+            "M.Deportes 5"
+        ]
+    },
+    {
+        "nombre": "M.Deportes 6",
+        "links": [
+            "acestream://8587ed8ac36ac477e1d4176d3159a38bd154d4ce"
+        ],
+        "tags": [
+            "Movistar Deportes 6",
+            "M+ Deportes 6",
+            "M.Deportes 6"
+        ]
+    },
+    {
+        "nombre": "M.Deportes 7",
+        "links": [
+            "acestream://2448f1d084f440eed2fbe847e24f1c02f5659a78"
+        ],
+        "tags": [
+            "Movistar Deportes 7",
+            "M+ Deportes 7",
+            "M.Deportes 7"
+        ]
+    },
+    {
+        "nombre": "M.Liga de Campeones",
+        "links": [
+            "acestream://f096a64dd756a6d549aa7b12ee9acf7eee27e833"
+        ],
+        "tags": [
+            "Movistar Liga de Campeones",
+            "M+ Liga de Campeones",
+            "M.Liga de Campeones",
+            "M+ Champions League"
+        ]
+    },
+    {
+        "nombre": "M.L.Camp. 2",
+        "links": [
+            "acestream://fc2fe31b0bce25e2dc7ab4d262bf645e2be5a393"
+        ],
+        "tags": [
+            "Movistar Liga de Campeones 2",
+            "M.L.Camp. 2",
+            "M+ Liga de Campeones 2"
+        ]
+    },
+    {
+        "nombre": "M.L.Camp. 3",
+        "links": [
+            "acestream://ad372cba73aa0ece207a79532b3e30b731136bb2"
+        ],
+        "tags": [
+            "Movistar Liga de Campeones 3",
+            "M.L.Camp. 3",
+            "M+ Liga de Campeones 3"
+        ]
+    },
+    {
+        "nombre": "Movistar Golf",
+        "links": [
+            "acestream://4f945b0ba4206fa2676b61e9eaa465ac3dcc8122",
+            "acestream://872608e734992db636eb79426802cd08f4029afb",
+            "acestream://858b3cf2842ebe394999275e5ebb0435f1af2ae4"
+        ],
+        "tags": [
+            "Movistar Golf",
+            "M+ Golf",
+            "Movistar Golf - Opción 2",
+            "Movistar Golf - Opción 3"
+        ]
+    },
+    {
+        "nombre": "Movistar Golf 2",
+        "links": [
+            "acestream://9a4f3ae6563668b7709dac509dedc709441b3fd9"
+        ],
+        "tags": [
+            "Movistar Golf 2",
+            "M+ Golf 2"
+        ]
+    },
+    {
+        "nombre": "Opciones adicionales",
+        "links": [
+            "https://elplan94.github.io/hook/",
+            "https://www.socialcreator.com/elplandeportes",
+            "https://miztv.shop/tele/stream-749.php",
+            "acestream://1d79a7543d691666135669f89f3541f54e2dd0a9",
+            "acestream://6753492c1908274c268a1b28e2a054a0ff8f86f9",
+            "acestream://d59fe9978eed49f256b312a60671b5bce43d3f24",
+            "acestream://931b1984badcb821df7b47a66ac0835ac871b51c",
+            "acestream://e2e2aca792aae5da19995ac516b1d620531bd49c",
+            "acestream://6b56c1de436327b49e429a702e81e9269630e37a"
+        ],
+        "tags": [
+            "Opción 1",
+            "Opción 2",
+            "Opción 3",
+            "Opción 4",
+            "Opción 5"
+        ]
+    }
 ]
