@@ -1,4 +1,7 @@
-import { firefox } from 'playwright'
+import { firefox, type Page } from 'playwright'
+
+import groupMain from './groupChannels'
+
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -11,6 +14,9 @@ const channelsUrl = 'https://sites.google.com/view/elplandeportes/inicio'
 const selectors = {
     presentation: '[role="presentation"]',
     link: 'a',
+    input: '#url',
+    submit: '#submit',
+    expanded: 'body > section.blog-section > div > div > div > div > div:nth-child(5) > div > div > div:nth-child(3) > div:nth-child(2) > div > a'
 }
 const closeChannels: Channels = []
 const channels: Channels = []
@@ -37,21 +43,18 @@ const writeToDisk = async (file: string, channels: Channels) => {
     }
 }
 
-const getAceStreamLink = async (link: string) => {
-    const browser = await firefox.launch()
-    const page = await browser.newPage()
-    await page.goto('https://checkshorturl.com/')
+const getAceStreamLink = async (link: string, page: Page) => {
+    await page.goto('https://www.expandurl.net/')
     const tinyUrl = link
-    await page.waitForSelector('#recherche', { state: 'visible', timeout: 5000 })
-    await page.fill('#recherche', tinyUrl)
-    await page.click('input[type="submit"]')
-    await page.waitForSelector('#info > p:nth-child(4) > a')
-    const longUrl = await page.getAttribute('#info > p:nth-child(4) > a', 'href')
+    await page.waitForSelector(selectors.input, { state: 'visible', timeout: 5000 })
+    await page.locator(selectors.input).fill(tinyUrl)
+    await page.locator(selectors.submit).click()
+    await page.waitForSelector(selectors.expanded, { state: 'visible', timeout: 5000 })
+    const longUrl = await page.getAttribute(selectors.expanded, 'href')
     if (!longUrl) {
         throw new Error('Long URL not found')
     }
     console.log('Long URL:', longUrl)
-    await browser.close()
 
     return longUrl
 }
@@ -70,20 +73,20 @@ const main = async () => {
             closeChannels.push({ link: cleanLink, name })
         }
     }
-    page.close()
-    browser.close()
 
     await writeToDisk('rawChannels', closeChannels)
 
     console.log('Close channels: done!')
-
     for (const channel of closeChannels) {
-        const aceStreamLink = await getAceStreamLink(channel.link)
+        const aceStreamLink = await getAceStreamLink(channel.link, page)
         channels.push({ name: channel.name, link: aceStreamLink })
     }
 
+    page.close()
+    browser.close()
     await writeToDisk('channels', channels)
-
 }
 
 await main()
+
+await groupMain()
