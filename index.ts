@@ -1,4 +1,4 @@
-import { firefox, type Page } from 'playwright'
+import { firefox } from 'playwright'
 
 import groupMain from './groupChannels'
 
@@ -10,15 +10,12 @@ type Channel = {
     link: string
 }
 type Channels = Channel[]
-const channelsUrl = 'https://sites.google.com/view/elplandeportes/inicio'
+const channelsUrl = 'https://aceid.vercel.app/listado/'
 const selectors = {
-    presentation: '[role="presentation"]',
-    link: 'a',
-    input: '#url',
-    submit: '#submit',
-    expanded: 'body > section.blog-section > div > div > div > div > div:nth-child(5) > div > div > div:nth-child(3) > div:nth-child(2) > div > a'
+    card: 'div.card',
+    name: 'div.card-header > h5',
+    link: 'div.card-footer > div > div.text-end > span[title]'
 }
-const closeChannels: Channels = []
 const channels: Channels = []
 
 const writeToDisk = async (file: string, channels: Channels) => {
@@ -43,50 +40,48 @@ const writeToDisk = async (file: string, channels: Channels) => {
     }
 }
 
-const getAceStreamLink = async (link: string, page: Page) => {
-    await page.goto('https://www.expandurl.net/')
-    const tinyUrl = link
-    await page.waitForSelector(selectors.input, { state: 'visible', timeout: 5000 })
-    await page.locator(selectors.input).fill(tinyUrl)
-    await page.locator(selectors.submit).click()
-    await page.waitForSelector(selectors.expanded, { state: 'visible', timeout: 5000 })
-    const longUrl = await page.getAttribute(selectors.expanded, 'href')
-    if (!longUrl) {
-        throw new Error('Long URL not found')
-    }
-    console.log('Long URL:', longUrl)
-
-    return longUrl
-}
-
-const main = async () => {
-    const browser = await firefox.launch({ headless: false })
+export const main = async () => {
+    const browser = await firefox.launch({ headless: true })
     const page = await browser.newPage()
     await page.goto(channelsUrl, { waitUntil: 'networkidle' })
-    const items = await page.locator(selectors.presentation).all()
+    await page.waitForSelector(selectors.card, { state: 'attached', timeout: 15000 })
+    await page.waitForSelector(selectors.link, { state: 'attached', timeout: 15000 })
+    const cards = await page.locator(selectors.card).all()
+    const cardCount = cards.length
+    const uniqueLinks = new Set<string>()
 
-    for (const item of items) {
-        const link = await item.evaluate((el) => el.firstElementChild?.getAttribute('href'))
-        const name = await item.evaluate((el) => el.getAttribute('aria-label'))
-        if (link && name && link?.startsWith('https')) {
-            const cleanLink = decodeURIComponent(link.replace(/^https:\/\/www\.google\.com\/url\?q=/, '').replace(/&sa.*/, ''))
-            closeChannels.push({ link: cleanLink, name })
+    for (const card of cards) {
+        const rawName = await card.locator(selectors.name).textContent()
+        const name = rawName?.trim()
+        if (!name) {
+            continue
+        }
+
+        const linkSpans = await card.locator(selectors.link).all()
+        for (const span of linkSpans) {
+            const title = await span.getAttribute('title')
+            const link = title?.trim()
+            if (!link || !link.startsWith('acestream://')) {
+                continue
+            }
+            const key = `${name}:::${link}`
+            if (uniqueLinks.has(key)) {
+                continue
+            }
+            uniqueLinks.add(key)
+            channels.push({ name, link })
         }
     }
 
-    await writeToDisk('rawChannels', closeChannels)
-
-    console.log('Close channels: done!')
-    for (const channel of closeChannels) {
-        const aceStreamLink = await getAceStreamLink(channel.link, page)
-        channels.push({ name: channel.name, link: aceStreamLink })
-    }
-
-    page.close()
-    browser.close()
+    await page.close()
+    await browser.close()
+    await writeToDisk('rawChannels', channels)
     await writeToDisk('channels', channels)
+    console.log(`Collected ${channels.length} AceStream links from ${cardCount} cards`)
 }
 
-// await main()
+if (import.meta.main) {
+    await main()
+}
 
 // await groupMain()
