@@ -13,7 +13,7 @@ Scraper + API Hono para canales AceStream. Simple, rapido y listo para Vercel.
 
 ```bash
 bun install
-bunx playwright install firefox
+bunx playwright install chromium
 ```
 
 ```bash
@@ -65,6 +65,8 @@ GitHub Action diaria en `.github/workflows/daily-scrape.yml`:
 - `SAVE_RAW`: `true` para guardar `rawChannels.json`
 - `SCRAPE_TIMEOUT_MS`: timeout del scrape
 - `REFRESH_ON_START`: `true`/`1` para refrescar al arrancar
+- `SCRAPE_USER_AGENT`: user-agent personalizado para el scraper
+- `SCRAPE_LOCALE`: locale del navegador (default `es-ES`)
 - `API_NAME`: nombre mostrado en `GET /api`
 - `API_VERSION`: version mostrada en `GET /api`
 - `API_DESCRIPTION`: descripcion mostrada en `GET /api`

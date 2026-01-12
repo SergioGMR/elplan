@@ -1,4 +1,5 @@
-import { firefox } from 'playwright';
+import { chromium } from 'playwright-chromium';
+import type { Page } from 'playwright-chromium';
 
 import type { Channel, DataEnvelope } from './types';
 import { writeJson } from './storage';
@@ -16,22 +17,80 @@ type ScrapeOptions = {
     timeoutMs?: number;
 };
 
+const checkpointTitle = 'Vercel Security Checkpoint';
+
+const applyStealth = async (page: Page) => {
+    await page.addInitScript(() => {
+        Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+        Object.defineProperty(navigator, 'languages', {
+            get: () => ['es-ES', 'es', 'en'],
+        });
+        Object.defineProperty(navigator, 'plugins', {
+            get: () => [1, 2, 3, 4, 5],
+        });
+        (window as unknown as { chrome?: { runtime: Record<string, unknown> } }).chrome = {
+            runtime: {},
+        };
+    });
+};
+
+const waitForCards = async (page: Page, timeoutMs: number) => {
+    const deadline = Date.now() + timeoutMs;
+    let lastTitle = '';
+
+    while (Date.now() < deadline) {
+        try {
+            lastTitle = await page.title();
+        } catch {
+            lastTitle = '';
+        }
+
+        if (lastTitle.includes(checkpointTitle)) {
+            console.warn('Vercel checkpoint detected, retrying...');
+            await page.waitForTimeout(2500);
+            await page.reload({ waitUntil: 'domcontentloaded' });
+            continue;
+        }
+
+        const count = await page.locator(selectors.card).count();
+        if (count > 0) {
+            return;
+        }
+
+        await page.waitForTimeout(500);
+    }
+
+    throw new Error(`Timeout waiting for channels. Last title: ${lastTitle || 'unknown'}`);
+};
+
 export const scrapeChannels = async (options: ScrapeOptions = {}) => {
     const headless =
         typeof options.headless === 'boolean'
             ? options.headless
             : process.env.HEADLESS !== 'false';
-    const timeoutMs = Number(options.timeoutMs ?? process.env.SCRAPE_TIMEOUT_MS ?? 20000);
+    const timeoutMs = Number(options.timeoutMs ?? process.env.SCRAPE_TIMEOUT_MS ?? 60000);
     const channels: Channel[] = [];
     const uniqueLinks = new Set<string>();
 
-    const browser = await firefox.launch({ headless });
-    const page = await browser.newPage();
+    const browser = await chromium.launch({
+        headless,
+        args: ['--disable-blink-features=AutomationControlled'],
+    });
+    const context = await browser.newContext({
+        userAgent:
+            process.env.SCRAPE_USER_AGENT ??
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        locale: process.env.SCRAPE_LOCALE ?? 'es-ES',
+        viewport: { width: 1365, height: 768 },
+    });
+    const page = await context.newPage();
+    await applyStealth(page);
     page.setDefaultTimeout(timeoutMs);
+    page.setDefaultNavigationTimeout(timeoutMs);
 
     try {
-        await page.goto(channelsUrl, { waitUntil: 'networkidle' });
-        await page.waitForSelector(selectors.card, { state: 'attached' });
+        await page.goto(channelsUrl, { waitUntil: 'domcontentloaded' });
+        await waitForCards(page, timeoutMs);
         await page.waitForSelector(selectors.link, { state: 'attached' });
 
         const cards = await page.locator(selectors.card).all();
@@ -59,6 +118,7 @@ export const scrapeChannels = async (options: ScrapeOptions = {}) => {
         }
     } finally {
         await page.close();
+        await context.close();
         await browser.close();
     }
 
