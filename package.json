@@ -1,6 +1,6 @@
 {
   "name": "elplan",
-  "module": "index.ts",
+  "module": "src/server.ts",
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest"
@@ -9,7 +9,15 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "playwright": "^1.48.2",
-    "puppeteer": "^23.6.1"
+    "hono": "^4.6.0",
+    "playwright": "^1.48.2"
+  },
+  "scripts": {
+    "dev": "bun run src/server.ts --refresh",
+    "start": "bun run src/server.ts",
+    "refresh": "bun run src/pipeline.ts",
+    "scrape": "bun run src/scrape.ts",
+    "group": "bun run src/groupChannels.ts",
+    "test": "bun test"
   }
 }
