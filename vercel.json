@@ -3,6 +3,9 @@
   "redirects": [
     { "source": "/", "destination": "/api", "permanent": true }
   ],
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api" }
+  ],
   "headers": [
     {
       "source": "/api",

@@ -9,6 +9,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@hono/node-server": "^1.19.7",
     "hono": "^4.6.0",
     "playwright-chromium": "^1.48.2"
   },
