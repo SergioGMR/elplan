@@ -2,10 +2,11 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 
 import { readJsonIfExists } from './storage';
-import { toApiChannels } from './apiChannels';
+import { toApiChannels, filterChannelsByQuality } from './apiChannels';
 import { transformChannels } from './groupChannels';
 import type { OutputChannel } from './groupChannels';
-import type { Channel, DataEnvelope } from './types';
+import type { Channel, DataEnvelope, Quality } from './types';
+import { QUALITIES } from './types';
 
 const app = new Hono();
 
@@ -84,16 +85,31 @@ app.get('/api/health', async (c) => {
     });
 });
 
+const parseQualityFilter = (query: string | undefined): Quality[] => {
+    if (!query) {
+        return [];
+    }
+    return query
+        .split(',')
+        .map((q) => q.trim().toLowerCase() as Quality)
+        .filter((q) => QUALITIES.includes(q));
+};
+
 app.get('/api/channels', async (c) => {
     const channelData = await loadChannelData();
     if (!channelData.grouped) {
         return c.json({ error: dataMissingMessage }, 404);
     }
 
-    const channels = toApiChannels(channelData.grouped);
+    const qualityParam = c.req.query('quality');
+    const qualityFilter = parseQualityFilter(qualityParam);
+    const allChannels = toApiChannels(channelData.grouped);
+    const channels = filterChannelsByQuality(allChannels, qualityFilter);
+
     return c.json({
         channels,
         totalChannels: channels.length,
+        ...(qualityFilter.length > 0 && { filter: qualityFilter }),
         lastUpdated: toIso(channelData.updated),
     });
 });

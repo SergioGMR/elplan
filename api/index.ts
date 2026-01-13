@@ -7,7 +7,7 @@
  * Endpoints:
  * - GET /api          - API info
  * - GET /api/health   - Health check
- * - GET /api/channels - Channels with logos and AceStream links
+ * - GET /api/channels - Channels with logos and AceStream links (supports ?quality=4k,1080p filter)
  */
 
 import { handle } from '@hono/node-server/vercel';
@@ -35,9 +35,15 @@ type DataEnvelope<T> = {
     updated: number;
 };
 
+type Quality = '4k' | '1080p' | '720p' | 'sd' | 'unknown';
+
+type QualityLinks = Record<Quality, string[]>;
+
+const QUALITIES: Quality[] = ['4k', '1080p', '720p', 'sd', 'unknown'];
+
 type OutputChannel = {
     nombre: string;
-    links: string[];
+    links: QualityLinks;
     tags: string[];
 };
 
@@ -50,7 +56,7 @@ type ApiChannel = {
     name: string;
     logo: string | null;
     logoExternal: string | null;
-    links: string[];
+    links: QualityLinks;
 };
 
 // Cast imported JSON to proper types
@@ -110,6 +116,18 @@ const resolveChannelLogo = (name: string): ChannelLogo => {
         return exact;
     }
     return getFallbackLogo(name) ?? { logo: null, logoExternal: null };
+};
+
+// ============================================================
+// QUALITY EXTRACTION
+// ============================================================
+
+const extractQuality = (name: string): Quality => {
+    if (/4k|uhd/i.test(name)) return '4k';
+    if (/1080p?|fhd/i.test(name)) return '1080p';
+    if (/720p?(?![0-9])|(?<![u])hd(?![d0-9])/i.test(name)) return '720p';
+    if (/sd|480p?|576p?/i.test(name)) return 'sd';
+    return 'unknown';
 };
 
 // ============================================================
@@ -209,10 +227,16 @@ const generateTags = (channelName: string) => {
         .sort((a, b) => a.localeCompare(b));
 };
 
+const qualitySuffixRegex = /\s+(?:4K|UHD|FHD|HD|SD)?\s*(?:\d{3,4}p)?$/i;
+
+const removeQualitySuffix = (name: string) => {
+    return name.replace(qualitySuffixRegex, '').trim() || name;
+};
+
 const transformChannels = (inputData: DataEnvelope<Channel[]>): OutputChannel[] => {
     const output = new Map<
         string,
-        { nombre: string; links: Set<string>; tags: Set<string> }
+        { nombre: string; links: Record<Quality, Set<string>>; tags: Set<string> }
     >();
 
     for (const channel of inputData.data) {
@@ -222,22 +246,33 @@ const transformChannels = (inputData: DataEnvelope<Channel[]>): OutputChannel[] 
             continue;
         }
 
-        const name = normalizeSpacing(rawName);
+        const quality = extractQuality(rawName);
+        // Remove quality suffix BEFORE normalizing and parsing options
+        const nameWithoutQuality = removeQualitySuffix(rawName);
+        const name = normalizeSpacing(nameWithoutQuality);
         const optionInfo = parseOptionName(name);
         const groupName = optionInfo?.parentName ?? name;
+        const cleanGroupName = groupName;
+
         const bucket =
-            output.get(groupName) ??
+            output.get(cleanGroupName) ??
             (() => {
                 const entry = {
-                    nombre: groupName,
-                    links: new Set<string>(),
-                    tags: new Set<string>(generateTags(groupName)),
+                    nombre: cleanGroupName,
+                    links: {
+                        '4k': new Set<string>(),
+                        '1080p': new Set<string>(),
+                        '720p': new Set<string>(),
+                        sd: new Set<string>(),
+                        unknown: new Set<string>(),
+                    },
+                    tags: new Set<string>(generateTags(cleanGroupName)),
                 };
-                output.set(groupName, entry);
+                output.set(cleanGroupName, entry);
                 return entry;
             })();
 
-        bucket.links.add(rawLink);
+        bucket.links[quality].add(rawLink);
         bucket.tags.add(name);
 
         if (optionInfo) {
@@ -247,7 +282,13 @@ const transformChannels = (inputData: DataEnvelope<Channel[]>): OutputChannel[] 
 
     return [...output.values()].map((entry) => ({
         nombre: entry.nombre,
-        links: [...entry.links].sort(),
+        links: {
+            '4k': [...entry.links['4k']].sort(),
+            '1080p': [...entry.links['1080p']].sort(),
+            '720p': [...entry.links['720p']].sort(),
+            sd: [...entry.links.sd].sort(),
+            unknown: [...entry.links.unknown].sort(),
+        },
         tags: [...entry.tags].sort((a, b) => a.localeCompare(b)),
     }));
 };
@@ -263,10 +304,34 @@ const normalizeChannelName = (name: string) => {
     return cleaned || name.trim();
 };
 
+const mergeQualityLinks = (
+    target: Record<Quality, Set<string>>,
+    source: QualityLinks
+) => {
+    for (const q of QUALITIES) {
+        for (const link of source[q]) {
+            target[q].add(link);
+        }
+    }
+};
+
+const qualityLinksToSorted = (links: Record<Quality, Set<string>>): QualityLinks => ({
+    '4k': [...links['4k']].sort(),
+    '1080p': [...links['1080p']].sort(),
+    '720p': [...links['720p']].sort(),
+    sd: [...links.sd].sort(),
+    unknown: [...links.unknown].sort(),
+});
+
 const toApiChannels = (channels: OutputChannel[]): ApiChannel[] => {
     const map = new Map<
         string,
-        { name: string; links: Set<string>; logo: string | null; logoExternal: string | null }
+        {
+            name: string;
+            links: Record<Quality, Set<string>>;
+            logo: string | null;
+            logoExternal: string | null;
+        }
     >();
 
     for (const channel of channels) {
@@ -280,7 +345,13 @@ const toApiChannels = (channels: OutputChannel[]): ApiChannel[] => {
                 const logo = resolveChannelLogo(baseName);
                 const value = {
                     name: baseName,
-                    links: new Set<string>(),
+                    links: {
+                        '4k': new Set<string>(),
+                        '1080p': new Set<string>(),
+                        '720p': new Set<string>(),
+                        sd: new Set<string>(),
+                        unknown: new Set<string>(),
+                    },
                     logo: logo.logo,
                     logoExternal: logo.logoExternal,
                 };
@@ -288,9 +359,7 @@ const toApiChannels = (channels: OutputChannel[]): ApiChannel[] => {
                 return value;
             })();
 
-        for (const link of channel.links) {
-            entry.links.add(link);
-        }
+        mergeQualityLinks(entry.links, channel.links);
     }
 
     return [...map.values()]
@@ -298,9 +367,41 @@ const toApiChannels = (channels: OutputChannel[]): ApiChannel[] => {
             name: entry.name,
             logo: entry.logo,
             logoExternal: entry.logoExternal,
-            links: [...entry.links].sort(),
+            links: qualityLinksToSorted(entry.links),
         }))
         .sort((a, b) => a.name.localeCompare(b.name));
+};
+
+const filterChannelsByQuality = (
+    channels: ApiChannel[],
+    qualities: Quality[]
+): ApiChannel[] => {
+    if (qualities.length === 0) {
+        return channels;
+    }
+
+    return channels
+        .map((channel) => {
+            const filteredLinks: Partial<QualityLinks> = {};
+            let hasLinks = false;
+
+            for (const q of qualities) {
+                if (channel.links[q].length > 0) {
+                    filteredLinks[q] = channel.links[q];
+                    hasLinks = true;
+                }
+            }
+
+            if (!hasLinks) {
+                return null;
+            }
+
+            return {
+                ...channel,
+                links: filteredLinks as QualityLinks,
+            };
+        })
+        .filter((c): c is ApiChannel => c !== null);
 };
 
 // ============================================================
@@ -324,6 +425,20 @@ const loadChannelData = () => {
 };
 
 // ============================================================
+// QUALITY FILTER PARSING
+// ============================================================
+
+const parseQualityFilter = (query: string | undefined): Quality[] => {
+    if (!query) {
+        return [];
+    }
+    return query
+        .split(',')
+        .map((q) => q.trim().toLowerCase() as Quality)
+        .filter((q) => QUALITIES.includes(q));
+};
+
+// ============================================================
 // HONO APP
 // ============================================================
 
@@ -340,7 +455,7 @@ app.use('/*', cors(corsConfig));
 const endpoints = {
     'GET /api': 'API info',
     'GET /api/health': 'Service status',
-    'GET /api/channels': 'Channels with logos and AceStream links',
+    'GET /api/channels': 'Channels with logos and AceStream links (supports ?quality=4k,1080p filter)',
 };
 
 const apiMeta = {
@@ -377,17 +492,22 @@ app.get('/health', (c) => {
     });
 });
 
-// GET /api/channels - Channels with logos
+// GET /api/channels - Channels with logos (supports quality filter)
 app.get('/channels', (c) => {
     const channelData = loadChannelData();
     if (!channelData.grouped) {
         return c.json({ error: 'No data file found. Run the refresh pipeline first.' }, 404);
     }
 
-    const channels = toApiChannels(channelData.grouped);
+    const qualityParam = c.req.query('quality');
+    const qualityFilter = parseQualityFilter(qualityParam);
+    const allChannels = toApiChannels(channelData.grouped);
+    const channels = filterChannelsByQuality(allChannels, qualityFilter);
+
     return c.json({
         channels,
         totalChannels: channels.length,
+        ...(qualityFilter.length > 0 && { filter: qualityFilter }),
         lastUpdated: toIso(channelData.updated),
     });
 });
