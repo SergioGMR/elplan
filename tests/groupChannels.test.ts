@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'bun:test';
 
-import { generateTags, transformChannels } from '../src/groupChannels';
-import type { Channel, DataEnvelope } from '../src/types';
+import { generateTags, transformChannels } from '../api/groupChannels';
+import type { Channel, DataEnvelope } from '../api/types';
 
 describe('transformChannels', () => {
     it('groups opciones and dedupes links', () => {

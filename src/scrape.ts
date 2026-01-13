@@ -1,8 +1,8 @@
 import { chromium } from 'playwright-chromium';
 import type { Page } from 'playwright-chromium';
 
-import type { Channel, DataEnvelope } from './types';
-import { writeJson } from './storage';
+import type { Channel, DataEnvelope } from '../api/types';
+import { writeJson } from '../api/storage';
 
 const channelsUrl = 'https://aceid.vercel.app/listado/';
 const selectors = {

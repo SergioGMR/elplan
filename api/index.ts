@@ -1,6 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 
-import app from '../src/app';
+import app from './app';
 
 export const config = {
     runtime: 'nodejs',

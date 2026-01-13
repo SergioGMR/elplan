@@ -1,4 +1,4 @@
-import app from './app';
+import app from '../api/app';
 import { refreshData } from './pipeline';
 
 const args = new Set(process.argv.slice(2));

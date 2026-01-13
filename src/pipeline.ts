@@ -1,5 +1,5 @@
 import { scrapeAndSave } from './scrape';
-import { groupChannels } from './groupChannels';
+import { groupChannels } from '../api/groupChannels';
 
 type RefreshOptions = {
     headless?: boolean;

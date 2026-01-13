@@ -17,7 +17,7 @@
     "start": "bun run src/server.ts",
     "refresh": "bun run src/pipeline.ts",
     "scrape": "bun run src/scrape.ts",
-    "group": "bun run src/groupChannels.ts",
+    "group": "bun run api/groupChannels.ts",
     "test": "bun test"
   }
 }
