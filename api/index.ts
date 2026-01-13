@@ -372,8 +372,6 @@ app.get('/health', (c) => {
         status: 'ok',
         timestamp: new Date().toISOString(),
         data: {
-            totalMatches: 0,
-            totalEvents: 0,
             totalChannels,
         },
     });
